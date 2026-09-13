@@ -53,19 +53,26 @@ runspeed = airspeed
 if (keyboard_check(ord("D")))
 {
 xvelocity += runspeed
-image_xscale=-image_scale
 sprite_index = RunAnimation
+if (!keyboard_check(ord("A")))
+{
+image_xscale=-image_scale
+}
 }
 
 if (keyboard_check(ord("A")))
 {
 xvelocity -= runspeed
-image_xscale=image_scale
 sprite_index = RunAnimation
+if (!keyboard_check(ord("D")))
+{
+image_xscale=image_scale
+}
 }
 if (keyboard_check(ord("A"))&&keyboard_check(ord("D")))
 {
 xvelocity = 0
+sprite_index = IdleAnimation
 }
 if (!keyboard_check(ord("A"))&&!keyboard_check(ord("D")))
 {
@@ -112,9 +119,11 @@ double_jumps -= 1
 }
 if (leftwall)
 {
-xvelocity += walljumppower
+xvelocity +=walljumppower
+image_xscale=-image_scale
 }
 if (rightwall)
 {
 xvelocity -= walljumppower
+image_xscale=image_scale
 }
