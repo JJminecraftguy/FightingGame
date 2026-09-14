@@ -3,7 +3,6 @@
 //
 // Includes emulation of:
 //	- Scanlines (both horizontal and vertical)
-//	- Phosphor masks (aperture, shadow, and slot)
 //	- Curvature
 //	- Arbitrary aspect ratios
 //	- Glow and halation
@@ -14,10 +13,6 @@ varying vec2 v_vTexcoord;
 uniform vec2 uDisplaySize;
 uniform vec2 uGameSize;
 uniform float uAspect;
-uniform sampler2D uMaskSampler;
-uniform float uMaskBrightness;
-uniform float uMaskScale;
-uniform float uDoBGR;
 uniform float uVerticalScan;
 uniform float uScanIntensity;
 uniform float uWarp;
@@ -26,7 +21,6 @@ uniform float uGlowAmount;
 uniform float uDoIntScale;
 uniform float uInterlaceTick;
 uniform float uDoInterlace;
-uniform float uDeconverge;
 uniform float uHalation;
 uniform sampler2D uNoiseSampler;
 uniform sampler2D uBackimg;
@@ -91,24 +85,6 @@ vec2 geometryCorrection()
 }
 
 
-void applyMask( inout vec4 color)
-{
-	/// Gets a color from the phosphor mask and brightens the shadowed regions if desired
-	/// Multiplies the resulting color into the output
-	
-	// Repeat for as many textures fit in the display window
-	vec2 maskUV = v_vTexcoord * ( uDisplaySize / 256.0) * ( 1.0 / uMaskScale);
-	
-	// Get color from the mask texture
-	vec4 maskColor = texture2D( uMaskSampler, maskUV);
-	
-	// Brighten the black parts of the mask to improve overall brightness
-	maskColor.rgb += color.rgb * uMaskBrightness;
-	
-	// Apply the result
-	color *= maskColor;
-}
-
 void applyScanlines( inout vec4 color, in vec2 uv)
 {
 	/// Gets the brightness of the current fragment with respect to scanlines
@@ -127,7 +103,7 @@ void applyScanlines( inout vec4 color, in vec2 uv)
 void applyGlow( inout vec4 color, in vec2 uv)
 {
 	/// Applies a short-range bloom effect to bleed bright pixels into the surrounding area
-	/// Should typically be applied after scanlines and the phosphor mask
+	/// Should typically be applied after scanlines
 	
 	// See if the fragment is on the border
 	bool is_border = ( (uv.x > 1.0) || (uv.x < 0.0) || (uv.y > 1.0) || (uv.y < 0.0) );
@@ -231,10 +207,6 @@ vec4 getColor( in vec2 uv)
 	// Get a starting color using better-than-bilinear filtering
 	vec4 col = quinticTexture2D( gm_BaseTexture, uv);
 	
-	// Offset the UVs for the red and blue channels to simulate deconvergence
-	col.r = quinticTexture2D( gm_BaseTexture, uv - ( uDeconverge / uGameSize)).r;
-	col.b = quinticTexture2D( gm_BaseTexture, uv + ( uDeconverge / uGameSize)).b;
-	
 	// Calculate a grayscale color, keeping luminosity relatively constant
 	float grayf = (0.2989 * col.r) + (0.5870 * col.g) + (0.1140 * col.b);
 	vec4 gray = vec4( grayf, grayf, grayf, 1.0);
@@ -257,9 +229,6 @@ void main()
 	
 	// Get the base color from the game
 	vec4 color = getColor( uv);
-	
-	// Apply the phosphor mask
-	applyMask( color);
 
 	// Make alternating fragments transparent due to interlacing
 	interlace( color, uv);

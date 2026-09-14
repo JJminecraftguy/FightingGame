@@ -81,16 +81,11 @@ function update_uniforms()
 	shader_set_uniform_f( shader_get_uniform( shader, "uWarp"), curvature_amount);
 	shader_set_uniform_f( shader_get_uniform( shader, "uDoIntScale"), do_int_scale);
 
-	shader_set_uniform_f( shader_get_uniform( shader, "uMaskBrightness"), phosphor_mask_brightness);
-	shader_set_uniform_f( shader_get_uniform( shader, "uDoBGR"), flip_rgb_layout);
-	shader_set_uniform_f( shader_get_uniform( shader, "uMaskScale"), phosphor_mask_scale);
-
 	shader_set_uniform_f( shader_get_uniform( shader, "uScanIntensity"), scanline_intensity);
 	shader_set_uniform_f( shader_get_uniform( shader, "uVerticalScan"), rotate_scanlines);
 	shader_set_uniform_f( shader_get_uniform( shader, "uDoInterlace"), do_interlacing);
 
 	shader_set_uniform_f( shader_get_uniform( shader, "uGlowAmount"), glow_amount);
-	shader_set_uniform_f( shader_get_uniform( shader, "uDeconverge"), deconvergence);
 	shader_set_uniform_f( shader_get_uniform( shader, "uHalation"), halation);
 	shader_set_uniform_f( shader_get_uniform( shader, "uBorderWidth"), border_width);
 	
@@ -113,10 +108,6 @@ function crt_apply()
 	
 	// Set the shader
 	shader_set( shader);
-	
-	// Present the phosphor mask texture to the shader
-	texture_set_stage( shader_get_sampler_index( shader, "uMaskSampler"), sprite_get_texture( phosphor_mask, flip_rgb_layout));
-	gpu_set_tex_repeat_ext( shader_get_sampler_index( shader, "uMaskSampler"), true);
 	
 	// Present the noise texture to the shader
 	texture_set_stage( shader_get_sampler_index( shader, "uNoiseSampler"), sprite_get_texture( rgb_noise, 0));

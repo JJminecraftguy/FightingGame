@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"shd_raw",
-  "name":"shd_raw",
+  "%Name":"shd_crt",
+  "name":"shd_crt",
   "parent":{
     "name":"GL ES",
     "path":"folders/Shaders/GL ES.yy",
