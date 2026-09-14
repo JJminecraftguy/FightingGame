@@ -40,19 +40,22 @@ if (runspeed == airspeed)
 runspeed = startrunspeed
 }
 double_jumps = total_jumps
+} else
+{
+runspeed = airspeed
+sprite_index = InAirAnimation
 }
 //CONTROLS
 
 //HORIZONTAL MOVEMENT
 xvelocity = 0
-if (!grounded)
-{
-runspeed = airspeed
-}
 if (keyboard_check(ord("D")))
 {
 xvelocity += runspeed
+if (grounded) 
+{
 sprite_index = RunAnimation
+}
 if (!keyboard_check(ord("A")))
 {
 image_xscale=-image_scale
@@ -62,7 +65,10 @@ image_xscale=-image_scale
 if (keyboard_check(ord("A")))
 {
 xvelocity -= runspeed
+if (grounded) 
+{
 sprite_index = RunAnimation
+}
 if (!keyboard_check(ord("D")))
 {
 image_xscale=image_scale
@@ -71,12 +77,18 @@ image_xscale=image_scale
 if (keyboard_check(ord("A"))&&keyboard_check(ord("D")))
 {
 xvelocity = 0
+if (grounded) 
+{
 sprite_index = IdleAnimation
+}
 }
 if (!keyboard_check(ord("A"))&&!keyboard_check(ord("D")))
 {
 xvelocity = 0
+if (grounded) 
+{
 sprite_index = IdleAnimation
+}
 }
 //VERTICAL MOVEMENT
 if (keyboard_check(vk_shift))
@@ -99,19 +111,20 @@ if ((place_meeting(x+1,y, ground_obj)&& !grounded))
 {
 rightwall = true
 walljump = true
-alarm_set(0, game_get_speed(gamespeed_fps)/4);  
+alarm_set(0, game_get_speed(gamespeed_fps)*0.25);  
 yvelocity = -jumpheight
 }
 if ((place_meeting(x-1,y, ground_obj)&& !grounded)) 
 {
 leftwall= true
 walljump = true
-alarm_set(0, game_get_speed(gamespeed_fps)/4);      
+alarm_set(0, game_get_speed(gamespeed_fps)*0.25);      
 yvelocity = -jumpheight
 }
 }
 if (double_jumps >= 1 && !walljump)
 {
+sprite_index = JumpAnimation
 yvelocity = -jumpheight
 double_jumps -= 1
 }

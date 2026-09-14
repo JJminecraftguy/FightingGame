@@ -13,6 +13,8 @@ hopwalljumppower = 5
 //Sprites
 IdleAnimation = CrocStand_spr
 RunAnimation = CrocRun_spr
+JumpAnimation = CrocJump_spr
+InAirAnimation = CrocJumpStill_spr
 
 //values
 yvelocity = 0
@@ -29,4 +31,3 @@ walljump=false
 rightwall=false
 leftwall=false
 inair=false
-
