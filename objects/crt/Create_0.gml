@@ -1,5 +1,6 @@
 /// @description Initialize
 
+
 #region Function definitions
 
 function get_mouse_coords()
@@ -57,7 +58,6 @@ function resize_surfaces()
 	// Resize view zero's camera to the game size, and make it fill the whole application surface
 	view_set_wport(0, display_width);
 	view_set_hport(0, display_height);
-	camera_set_view_size(view_get_camera(0), game_width, game_height);
 
 	// Ensure the application and GUI surfaces are the size of the display
 	surface_resize(application_surface, display_width, display_height);

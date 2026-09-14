@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":1,
   "parent":{
-    "name":"Collision",
-    "path":"folders/Collision.yy",
+    "name":"MapTextures",
+    "path":"folders/Maps/MapTextures.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"ground_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"TrainingDummy_obj",
+  "eventList":[],
   "managed":true,
-  "name":"ground_obj",
+  "name":"TrainingDummy_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"MapTextures",
-    "path":"folders/Maps/MapTextures.yy",
+    "name":"TrainingDummy",
+    "path":"folders/TrainingDummy.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,12 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"ground_spr",
-    "path":"sprites/ground_spr/ground_spr.yy",
+    "name":"TrainingDummy_spr",
+    "path":"sprites/TrainingDummy_spr/TrainingDummy_spr.yy",
   },
-  "spriteMaskId":{
-    "name":"ground_spr",
-    "path":"sprites/ground_spr/ground_spr.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }
