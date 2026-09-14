@@ -32,7 +32,7 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"shader","filters":[
         "GMShader",
-      ],"listItems":[],"multiselect":false,"name":"shader","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"shd_crt","path":"shaders/shd_crt/shd_crt.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"shd_crt","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"shader","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"shd_crt","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"game_width","filters":[],"listItems":[],"multiselect":false,"name":"game_width","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"320","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"game_height","filters":[],"listItems":[],"multiselect":false,"name":"game_height","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"240","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"display_width","filters":[],"listItems":[],"multiselect":false,"name":"display_width","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":1,},

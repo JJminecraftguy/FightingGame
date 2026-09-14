@@ -29,3 +29,4 @@ walljump=false
 rightwall=false
 leftwall=false
 inair=false
+

@@ -35,11 +35,10 @@ x += xvelocity
 
 if (grounded)
 {
-if (runspeed = airspeed)
+if (runspeed == airspeed)
 {
 runspeed = startrunspeed
 }
-
 double_jumps = total_jumps
 }
 //CONTROLS

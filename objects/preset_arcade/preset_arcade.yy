@@ -5,7 +5,7 @@
   "managed":true,
   "name":"preset_arcade",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"crt","path":"objects/crt/crt.yy",},"propertyId":{"name":"shader","path":"objects/crt/crt.yy",},"resource":{"name":"shd_crt","path":"shaders/shd_crt/shd_crt.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"shd_crt",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"crt","path":"objects/crt/crt.yy",},"propertyId":{"name":"shader","path":"objects/crt/crt.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"shd_crt",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"crt","path":"objects/crt/crt.yy",},"propertyId":{"name":"curvature_amount","path":"objects/crt/crt.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.2",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"crt","path":"objects/crt/crt.yy",},"propertyId":{"name":"phosphor_mask","path":"objects/crt/crt.yy",},"resource":{"name":"mask_slot","path":"sprites/mask_slot/mask_slot.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"mask_slot",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"crt","path":"objects/crt/crt.yy",},"propertyId":{"name":"scanline_intensity","path":"objects/crt/crt.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.05",},
