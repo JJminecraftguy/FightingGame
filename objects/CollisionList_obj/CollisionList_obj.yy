@@ -8,8 +8,8 @@
   "name":"CollisionList_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Player.yy",
+    "name":"Maps",
+    "path":"folders/Maps.yy",
   },
   "parentObjectId":null,
   "persistent":false,

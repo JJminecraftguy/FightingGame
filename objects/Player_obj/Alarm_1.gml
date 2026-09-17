@@ -5,3 +5,6 @@ downdodge = false
 leftdodge = false
 rightdodge = false
 grav = startgrav
+dodgelength = startdodgelength
+image_alpha = 1
+collision = array_concat(CollisionList_obj.character,CollisionList_obj.terrain)
